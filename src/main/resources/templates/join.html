@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th ="http://www.thymleaf.org">
+<head>
+    <link href="/css/Login.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <div class="fadeIn first">
+                <img src="/img/user.jpeg" id="icon" alt="User Icon" />
+            </div>
+            <!-- Login Form -->
+            <form action="/joinRequest" method="post">
+                <input type="text" class="fadeIn third" name="user_name" placeholder="Name">
+                <input type="text" class="fadeIn second" name="user_id" placeholder="ID">
+                <input type="password" class="fadeIn third" name="user_pw" placeholder="PW">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="/">홈페이지 이동</a>
+            </div>
+        </div>
+    </div>
+</html>
