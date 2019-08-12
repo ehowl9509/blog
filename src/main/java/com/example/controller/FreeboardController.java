@@ -29,14 +29,14 @@ public class FreeboardController {
     private FreeboardInfoService freeboardInfoService;
     @Autowired
     private FreeboardRepository freeboardRepository;
-
+//게시판
     @RequestMapping("/freeboard")
     public String freeboard(@RequestParam(value ="pageNum",defaultValue = "1")String pageNum) {
 
         String page = freeboardListService.freeboardList(returnIntValue(pageNum));
         return page;
     }
-
+//게시판 작성 요청
     @PostMapping("/freeboardWriteRequest")
     public String freeboardWriteRequest(@RequestParam Map<String, String> paramMap){
        String title =  paramMap.get("title");
@@ -46,7 +46,7 @@ public class FreeboardController {
 
         return "redirect:/freeboard";
     }
-
+//글내용
     @RequestMapping("/freeBoardInfo")
     public String getPost(@RequestParam(value = "freeId") String freeId){
         String page =  freeboardInfoService.getBoard(freeId);

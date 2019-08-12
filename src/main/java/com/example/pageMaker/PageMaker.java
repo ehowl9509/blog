@@ -1,5 +1,5 @@
 package com.example.pageMaker;
-
+//페이징
 public class PageMaker {
     private int totalcount;//전체 게시물 개수
     private int countlist;
