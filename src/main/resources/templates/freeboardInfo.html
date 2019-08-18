@@ -82,11 +82,11 @@
             <p><a href="#">Link</a></p>
             <p><a href="#">Link</a></p>
         </div>
+
         <div class="col-sm-8 text-left">
-            <h5 th:text="${session.freeboard.getTitle()}"> </h5>
-            <br><br>
-            <textarea th:text = "${session.freeboard.getContent()}" readonly = "readonly"></textarea>
-            <br><br>
+            <h1 th:text="${session.freeboard.getTitle()}"></h1>
+            <hr>
+            <p th:text = "${session.freeboard.getContent()}" readonly = "readonly"></p>
         </div>
     </div>
 </div>
