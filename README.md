@@ -1,4 +1,4 @@
-# 로그인과 게시판 구
+# 로그인과 게시판 구현
 
 #### Function
 - 회원가입, 로그인 
@@ -37,3 +37,5 @@
 - MYSQL
 
 - Thymeleaf
+#### Tool
+- Intelli J
