@@ -66,9 +66,6 @@
         if (freeboardPage.getSize() == 0 ){
             session.setAttribute("boardList", new ArrayList<Freeboard>());
             session.setAttribute("pageMaker", pageMaker);
-
-
-
 #### DB TABLE
 - User
 
