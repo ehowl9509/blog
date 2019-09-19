@@ -39,7 +39,7 @@
   freeboard.setWriter(writer);
   freeboardRepository.save(freeboard);
      ~~~
-    - 페이징 서비스
+    - 페이징 처리
     ~~~
    public PageMaker generatePageMaker(int pageNum, int contentNum, JpaRepository<Freeboard, Long> repository) {
 
@@ -52,10 +52,14 @@
         pageMaker.setLastblock(pageMaker.getTotalcount());//마지막 블록 번호를 전체 게시글 수를 통해서 정한다.
         pageMaker.prevnext(pageNum); // 현재 페이지 번호로 화살표를 나타낼지 정한다.
         pageMaker.setStartPage(pageMaker.getCurrentblock()); // 시작 페이지를 페이지 블록 번호로 정한다.
-        pageMaker.setEndPage(pageMaker.getLastblock(), pageMaker.getCurrentblock()); // 마지막 페이지를 마지막 페이지 블록과 현재 페이지                 블록 번호로 정한다
+        pageMaker.setEndPage(pageMaker.getLastblock(), pageMaker.getCurrentblock()); // 마지막 페이지를 마지막 페이지 블록과 현재 페이지                                     블록 번호로 정한다
 
         return pageMaker;
-       ~~~
+    ~~~
+
+    - 게시판 리스트
+    ~~~
+    
 #### DB TABLE
 - User
 
