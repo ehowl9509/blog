@@ -20,7 +20,15 @@
 - repository
     - 각Entity JpaRepository 모음
 - service 
-    - 회원가입, 
+    - 회원가입
+    ~~~
+        Users users = new Users();
+        users.setUserid(userId);
+        users.setUserpw(userPw);
+        users.setUsername(userName);
+
+        userRepository.save(users);
+     ~~~
 
 #### DB TABLE
 - User
