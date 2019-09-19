@@ -57,9 +57,18 @@
         return pageMaker;
     ~~~
 
-    - 게시판 리스트
+    - 게시판 리스트 설정
     ~~~
-    
+        PageMaker pageMaker = pageMakerService.generatePageMaker(pageNum, 9, freeboardRepository);
+
+        PageRequest pageRequest = PageRequest.of(pageNum-1, 9, Sort.Direction.DESC, "freeId");
+        Page<Freeboard> freeboardPage = freeboardRepository.findAll(pageRequest);
+        if (freeboardPage.getSize() == 0 ){
+            session.setAttribute("boardList", new ArrayList<Freeboard>());
+            session.setAttribute("pageMaker", pageMaker);
+
+
+
 #### DB TABLE
 - User
 
