@@ -22,12 +22,17 @@
 - service 
     - 회원가입
     ~~~
-        Users users = new Users();
-        users.setUserid(userId);
-        users.setUserpw(userPw);
-        users.setUsername(userName);
-
-        userRepository.save(users);
+  Users users = new Users();                        
+  users.setUserid(userId);                      
+  users.setUserpw(userPw);                      
+  users.setUsername(userName);                      
+  userRepository.save(users);
+  
+  Freeboard freeboard = new Freeboard();
+  freeboard.setTitle(title);
+  freeboard.setContent(content);
+  freeboard.setWriter(writer);
+  freeboardRepository.save(freeboard);
      ~~~
 
 #### DB TABLE
