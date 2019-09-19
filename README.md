@@ -13,14 +13,19 @@
 
 - controller
     - 게시판, 회원가입, 로그인 등 controller부문
+    
 - model
     - Entity 부분 
+    
 - pageMaker
     - 게시판 페이징 관리 
+    
 - repository
     - 각Entity JpaRepository 모음
+    
 - service 
-    - 회원가입
+
+- 회원가입, 게시판 글쓰기 JpaRepository.save사용
     ~~~
   Users users = new Users();                        
   users.setUserid(userId);                      
