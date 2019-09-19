@@ -66,11 +66,10 @@
         if (freeboardPage.getSize() == 0 ){
             session.setAttribute("boardList", new ArrayList<Freeboard>());
             session.setAttribute("pageMaker", pageMaker);
-#### DB TABLE
-- User
-
-- Freeboard
-
+#### Flont(view)
+- Bootstrap
+- Thymeleaf
+    - 로그인
 
 
 #### SKILL
