@@ -17,8 +17,8 @@
     - Entity 부분 
 - pageMaker
     - 게시판 페이징 관리 
-    ~~~
-    //페이징
+    
+    
 public class PageMaker {
     private int totalcount;//전체 게시물 개수
     private int countlist;
@@ -163,7 +163,7 @@ public class PageMaker {
 
 
 }
-~~~
+
 - repository
     - 각Entity JpaRepository 모음
 - service 
