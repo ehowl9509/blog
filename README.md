@@ -69,7 +69,12 @@
 #### Flont(view)
 - Bootstrap
 - Thymeleaf
-    - 로그인
+    - 로그인 상태에 따른 로그아웃 유무
+    ~~~
+         <li th:if="${session.loginUser == null}"><a href="/joinPage"><span class="glyphicon glyphicon-log-in"></span> 회원가입 </a></li>
+         <li th:if="${session.loginUser == null}"><a href="/loginPage"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
+         <li th:if="${session.loginUser != null}"><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> 로그아웃</a></li>
+           
 
 
 #### SKILL
