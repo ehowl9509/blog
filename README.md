@@ -74,9 +74,21 @@
          <li th:if="${session.loginUser == null}"><a href="/joinPage"><span class="glyphicon glyphicon-log-in"></span> 회원가입 </a></li>
          <li th:if="${session.loginUser == null}"><a href="/loginPage"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
          <li th:if="${session.loginUser != null}"><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> 로그아웃</a></li>
-           
-
-
+    ~~~
+    - 게시판 작성시 회원의 글번호, 제목, 글쓴이 표현
+    ~~~
+    <tr>
+    <th>글 번호</th>  
+    <th>글 제목</th>
+    <th>작성자</th>
+    </tr>
+        <th:block th:if="${session.boardList != null}">
+        <th:block th:each="board:${session.boardList}">
+    <tr>         
+         <td><span th:text="${board.getFreeId()}"></span> </td>         
+         <td><a th:onclick="|javascript:getPost('${board.getFreeId()}')|" th:text="${board.getTitle()}"></a></td>  
+         <td><span th:text="${board.getWriter()}"></span> </td>                                   
+    </tr>
 #### SKILL
 - Spring boot
 
