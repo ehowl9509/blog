@@ -92,12 +92,23 @@
     ~~~
     - 페이징 처리
     ~~~
-  <li class="disabled"><a th:if="${session.pageMaker.isPrev()}" style="text-decoration: none;"       th:onclick="|javascript:page('${session.pageMaker.getStartPage()}')|">«</a></li>
-                                <th:block th:each="pageNum:${#numbers.sequence(session.pageMaker.getStartPage(), session.pageMaker.getEndPage())}">
-                                <li><a th:text="${pageNum}" th:onclick="|javascript:page('${pageNum}')|"></a></li>
-                                </th:block>
-                                <li><a th:if="${session.pageMaker.isNext()}" style="text-decoration: none;" th:onclick="|javascript:page('${session.pageMaker.getEndPage()}')|">»</a></li>
-                                <button type="button" class="btn btn-primary pull-right" th:if="${session.loginUser != null}" onclick="location.href = '/freeboarWritePage'">글작성</button>
+   <ul class="pagination">
+     <li class="disabled"><a th:if="${session.pageMaker.isPrev()}" style="text-decoration: none;" 
+         <th:onclick="|javascript:page('${session.pageMaker.getStartPage()}')|">«</a>
+     </li>
+         <th:block th:each="pageNum:${#numbers.sequence(session.pageMaker.getStartPage(), session.pageMaker.getEndPage())}">
+     <li>
+         <a th:text="${pageNum}" th:onclick="|javascript:page('${pageNum}')|"></a>
+     </li>
+     </th:block>
+     <li>
+         <a th:if="${session.pageMaker.isNext()}" style="text-decoration: none;" 
+         th:onclick="|javascript:page('${session.pageMaker.getEndPage()}')|">»</a>
+     </li>
+         <button type="button" class="btn btn-primary pull-right"                                      
+                 th:if="${session.loginUser != null}" onclick="location.href = '/freeboarWritePage'">글작성
+         </button>
+   </ul>
 #### SKILL
 - Spring boot
 
