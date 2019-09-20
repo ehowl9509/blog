@@ -75,7 +75,7 @@
          <li th:if="${session.loginUser == null}"><a href="/loginPage"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
          <li th:if="${session.loginUser != null}"><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> 로그아웃</a></li>
     ~~~
-    - 게시판 작성시 회원의 글번호, 제목, 글쓴이 표현
+    - 게시판 작성시 회원의 글번호, 제목(클릭시 본문 이동), 글쓴이 표현
     ~~~
     <tr>
     <th>글 번호</th>  
@@ -89,6 +89,15 @@
          <td><a th:onclick="|javascript:getPost('${board.getFreeId()}')|" th:text="${board.getTitle()}"></a></td>  
          <td><span th:text="${board.getWriter()}"></span> </td>                                   
     </tr>
+    ~~~
+    - 페이징 처리
+    ~~~
+  <li class="disabled"><a th:if="${session.pageMaker.isPrev()}" style="text-decoration: none;"       th:onclick="|javascript:page('${session.pageMaker.getStartPage()}')|">«</a></li>
+                                <th:block th:each="pageNum:${#numbers.sequence(session.pageMaker.getStartPage(), session.pageMaker.getEndPage())}">
+                                <li><a th:text="${pageNum}" th:onclick="|javascript:page('${pageNum}')|"></a></li>
+                                </th:block>
+                                <li><a th:if="${session.pageMaker.isNext()}" style="text-decoration: none;" th:onclick="|javascript:page('${session.pageMaker.getEndPage()}')|">»</a></li>
+                                <button type="button" class="btn btn-primary pull-right" th:if="${session.loginUser != null}" onclick="location.href = '/freeboarWritePage'">글작성</button>
 #### SKILL
 - Spring boot
 
